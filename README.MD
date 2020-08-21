@@ -46,7 +46,7 @@
         
         - Nota: si algo que puedas hacer directamente por script de npm que es mas facil que webpack deberias usarlo asi ya que te permitira manejarte mejor si existe una actualizacion,etc. Recuerda que hay otras opciones a parte de webpack esta Rolan[para cosas mas avanzadas], u parcel[para hacer todo mas sencillo] o incluso next.js que ya integra un numero de ventajas como ssr y static,etc. 
 
-# 4.- Ahora procedemos a instalar y configurar un linter y prettier para mantener un codigo bien formateado y con reglas especificas del grupo o la organizacion.
+# 4.- Ahora procedemos a instalar y configurar un linter y prettier u otro para mantener un codigo bien formateado y con reglas especificas del grupo o la organizacion.
 
         Para ello vamos instalar eslint(usaremos standarjs) y prettier.
 

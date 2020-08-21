@@ -1,9 +1,18 @@
 import React from 'react'
+import { Router } from '@reach/router'
+import { Home } from './pages/Home.js'
+import { Menu } from './pages/Menu.js'
+
+import { GlobalStyles } from './styles/GlobalStyles.js'
 
 export const App = () => {
   return (
-    <div>
-      <h1>HOLA MUNDO</h1>
-    </div>
+    <>
+      <GlobalStyles />
+      <Router>
+        <Home path='/' />
+        <Menu path='/menu' />
+      </Router>
+    </>
   )
 }

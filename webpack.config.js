@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
-const Path = require('path')
 const Webpack = require('webpack')
+const Path = require('path')
 
 const productionPlugins = new CompressionPlugin({ algorithm: 'gzip' })
 const developmentPlugins = new Webpack.HotModuleReplacementPlugin()
@@ -38,6 +38,17 @@ module.exports = (env, { mode }) => ({
           presets: ['@babel/preset-env', '@babel/preset-react']
         }
       }
-    }]
+    },
+    {
+      test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm|webp$/,
+      use: {
+        loader: 'url-loader',
+        options: {
+          limit: 9000,
+          encoding: true
+        }
+      }
+    }
+    ]
   }
 })

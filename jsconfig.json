@@ -1,10 +1,11 @@
 {
-    // ESTO ES PARA INDICARLE AL COMPILADOR QUE EMPIECE A BUSCAR ARCHIVOS EN LA CARPETA RAIZ DEL PROYECTO
-    "compilerOptions":{
-        "baseUrl": "."
+//     // ESTO ES PARA INDICARLE AL COMPILADOR QUE EMPIECE A BUSCAR ARCHIVOS EN LA CARPETA RAIZ DEL PROYECTO
+     "compilerOptions":{
+         "baseUrl": "."
     },
-    // ESTOS SON ALIAS PARA INDECAR RUTAS DE CARPETAS
-    "path":{   
-        "@com/*":["components/*"]
-    }
+//     // ESTOS SON ALIAS PARA INDECAR RUTAS DE CARPETAS
+//     "path":{   
+//         "@com/*":["./components/*"]
+//     },
+//     "exclude": ["node_modules"]
 }
