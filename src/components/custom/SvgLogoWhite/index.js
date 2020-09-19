@@ -2,7 +2,7 @@ import * as React from 'react'
 
 function SvgComponent (props) {
   return (
-    <svg width='3.75em' height='3.75em' viewBox='0 0 44 37.178' {...props}>
+    <svg width='2em' height='2em' viewBox='0 0 44 37.178' {...props}>
       <defs>
         <style>{'.prefix__a{fill:#dfdfdf}'}</style>
       </defs>

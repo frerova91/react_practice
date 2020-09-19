@@ -44,7 +44,7 @@ export const Head = styled.header`
         align-content: center;
         padding-left: 5vw;
 
-        & > Svg:nth-child(2) {
+        & > svg:nth-child(2) {
             display: none;
         }
     }
@@ -71,7 +71,7 @@ export const Main = styled.main`
 
         & > a:hover {
             -webkit-text-fill-color: transparent;
-            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-width: 0.3vmin;
         }
     }
 
@@ -114,7 +114,7 @@ export const Foot = styled.footer`
             font-size: 3.25vmax;
             padding-bottom: 4px;
         }
-
+        
     }
 
     & > div:nth-child(2) {
@@ -130,10 +130,15 @@ export const Foot = styled.footer`
 
         & > a {
             text-decoration:none;
-            cursor: pointer;
             color:#DFDFDF;
             font-size: 3.25vmax;
             padding-bottom: 5%;
+        }
+
+        & > a:before{
+            content: attr(data-website)  attr(data-user);
+            unicode-bidi: bidi-override;
+            direction: rtl;
         }
 
     }

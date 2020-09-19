@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from '@reach/router'
 // import { NavButton } from '../components/custom/NavButton/index.js'
 import { Head, Main, Foot, Layout } from './styles/HomeStyles.js'
+import { NavLinks } from '../components/custom/NavLinks/NavLinks'
 // import { Layout } from '../components/layout/Layout.js'
 import { SvgComponent as Svg } from '../components/custom/SvgButton/index.js'
 
@@ -11,11 +11,12 @@ import imgS from '../assets/menu/stroke.webp'
 import imgR from '../assets/menu/rain.webp'
 
 export const Home = () => {
-  document.body.style.background = ` #151515 url(${img}) no-repeat fixed center / cover`
+  document.body.style.background = `#151515 url(${img}) no-repeat fixed center / cover`
   document.body.style.backgroundBlendMode = 'normal'
 
   return (
     <Layout>
+
       <Head>
         <Svg />
         <h3>WELLCOME</h3>
@@ -49,12 +50,17 @@ export const Home = () => {
       </Main>
 
       <Foot>
-        <div>
-          <Link to='/next'>&#x0003C;</Link>
-          <Link to='/'>&#x0002F;</Link>
-          <Link to='/back'>&#x0003E;</Link>
-        </div>
+        <NavLinks />
       </Foot>
+
+      {/* <Foot>
+        <div>
+          <Link to='/next'>&#x0003E;</Link>
+          <Link to='/'>&#x0002F;</Link>
+          <Link to='/back'>&#x0003C;</Link>
+        </div>
+      </Foot> */}
+
     </Layout>
   )
 }

@@ -20,11 +20,18 @@ module.exports = (env, { mode }) => ({
     open: false,
     port: 8080
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 0,
+      name: 'commons'
+    }
+  },
   plugins: [
     mode === 'production' && productionPlugins,
     mode === 'development' && developmentPlugins,
     new HtmlWebpackPlugin({
-      title: 'Practica de Re/act.js',
+      title: 'Practica de React.js',
       template: 'src/index.html'
     })
   ].filter(Boolean),
@@ -46,6 +53,7 @@ module.exports = (env, { mode }) => ({
         options: {
           limit: 9000,
           encoding: true
+          // el fallback loader por default de alternativa es file loader
         }
       }
     }

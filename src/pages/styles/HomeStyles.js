@@ -43,7 +43,7 @@ export const Head = styled.header`
 
     & > h3 {
         color:#686868;
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight:300;
         letter-spacing:4px;
         justify-self: center;
@@ -99,7 +99,7 @@ export const Main = styled.main`
         justify-self: start;
 
         color: #A7A7A7;
-        font-size: 1.85rem;
+        font-size: 1.25rem;
         font-weight: 200;
         word-spacing: 1px;
         word-wrap: break-word;
@@ -128,7 +128,7 @@ export const Main = styled.main`
 
         & > h1 {
             color:#686868;
-            font-size: 4.5rem;
+            font-size: 4rem;
             height: 100%;
             width: 100%;
             display: flex;
@@ -214,42 +214,5 @@ export const Main = styled.main`
 export const Foot = styled.footer`
     grid-area: foot;
     align-self: center;
-
-        & > div{
-            display:grid;
-
-            & > a{
-                cursor: pointer;
-                font-size: 3.25vmax;
-                font-weight: 100;
-                color: white;
-                text-decoration: none;
-                position:relative;
-            }
-
-            & a:nth-child(1) {
-                writing-mode: sideways-lr; //chrome cant use it
-                text-orientation: sideways;
-            }
-    
-            & a:nth-child(2) {
-                padding: 4px 0px 4px 0px;
-                writing-mode: sideways-lr; //chrome cant use it
-                text-orientation: upright;
-            }
-    
-            & a:nth-child(3) {
-                writing-mode: sideways-lr; //chrome cant use it
-                text-orientation: sideways;
-            }
-        }
-
-        ${BreakPoints.desktop}{
-            & > div > a{
-                font-size:1.65vmax;
-                font-weight: 300;
-            }
-        }
-    }
 
 `

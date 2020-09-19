@@ -4,7 +4,7 @@ import { Link } from './styles.js'
 export function SvgComponent (props) {
   return (
     <Link to='/menu'>
-      <svg width='3em' height='3em' viewBox='0 0 52.284 52.505' {...props}>
+      <svg width='1.5em' height='1.5em' viewBox='0 0 52.284 52.505' {...props}>
         <defs>
           <style>
             {
