@@ -53,14 +53,7 @@ export const Home = () => {
         <NavLinks />
       </Foot>
 
-      {/* <Foot>
-        <div>
-          <Link to='/next'>&#x0003E;</Link>
-          <Link to='/'>&#x0002F;</Link>
-          <Link to='/back'>&#x0003C;</Link>
-        </div>
-      </Foot> */}
-
     </Layout>
   )
 }
+export { Home as default } from './Home'

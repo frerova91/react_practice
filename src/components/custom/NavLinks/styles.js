@@ -15,21 +15,21 @@ export const Links = styled.div`
         text-decoration: none;
     }
 
-    & a:nth-child(1) {
-        writing-mode: sideways-lr; /*chrome cant use it*/
+    ${'' /* & a:nth-child(1) {
+        writing-mode: sideways-lr;
         text-orientation: sideways;
     }
-    
+
     & a:nth-child(2) {
         padding: 0.7% 0px 0.7% 0px;
-        writing-mode: sideways-lr; /*chrome cant use it*/
+        writing-mode: sideways-lr;
         text-orientation: upright;
     }
-    
+
     & a:nth-child(3) {
-        writing-mode: sideways-lr; /*chrome cant use it*/
+        writing-mode: sideways-lr;
         text-orientation: sideways;
-    }
+    } */}
 
     ${BreakPoints.desktop}{
             &  a{

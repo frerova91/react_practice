@@ -9,6 +9,7 @@ export const Layout = styled.div`
     grid-template-columns: minmax(auto,1fr);
     grid-template-rows: minmax(auto, 15%) minmax(auto,70%) minmax(auto,15%);
     padding: 30px 40px 30px 40px;
+    position:relative;
 
     ${BreakPoints.desktop}{
         grid-template-columns: minmax(auto,15%) minmax(auto,70%) minmax(auto,15%);
@@ -23,14 +24,24 @@ export const Layout = styled.div`
 
 export const Head = styled.header`
     grid-area:head;
-    align-self: center;
 
     display: grid;
     grid-auto-flow: column;
-    align-content: start;
-    
-    & > span{
+    align-items:center;
+
+
+    & span{
+        font-size: 1.75vmax;
+        color:#A7A7A7;
         display:none;
+    }
+
+    ${BreakPoints.desktop}{
+        & span{
+            align-self:end;
+            justify-self:end;
+            display:inline-block;
+        }
     }
     
 `
@@ -49,7 +60,18 @@ export const Main = styled.main`
     }
 
     & > span{
-        display:none;
+        display:grid;
+
+        & h1{
+            font-size: 10vmax; 
+            color:#686868; 
+            position:absolute;
+            left:70%;
+            top: 83%;
+        }
+
+        & h3{ display:none; }
+        & div{ display:none; }
     }
 
     & > aside {
@@ -106,8 +128,9 @@ export const Main = styled.main`
             align-items:center;
             color:#686868;
 
-            & h1{font-size: 10vmax;}
-            & h3{font-size: 3vmax; font-weight:300;}
+            & h1{position:relative; left:0px; top:0px;}
+            & h3{ display:inline-block; font-size: 3vmax; font-weight:300;}
+            & div{ display:flex; }
         }
 
         & aside{
@@ -121,4 +144,5 @@ export const Main = styled.main`
 
 export const Foot = styled.footer`
     grid-area:foot;
+    display:grid;
 `

@@ -7,3 +7,4 @@ export const NotFound = () => {
     </div>
   )
 }
+export { NotFound as default } from './NotFound'

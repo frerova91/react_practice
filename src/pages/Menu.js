@@ -117,3 +117,4 @@ export const Menu = () => {
     </Layout>
   )
 }
+export { Menu as default } from './Menu'

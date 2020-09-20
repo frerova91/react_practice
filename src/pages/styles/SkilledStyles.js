@@ -1,4 +1,5 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
+import { scroll } from '../../styles/Animations'
 import { bps as BreakPoints } from '../../styles/BreakPoints'
 
 export const Layout = styled.div`
@@ -27,10 +28,6 @@ export const Layout = styled.div`
         padding: 50px 40px 50px 40px;
     }
 `
-const scroll = keyframes`
-    from {transform: translateY(-1000px);opacity: 0;}
-    to {transform: translateY(0);opacity: 1;}
-`
 
 export const Head = styled.header`
     grid-area: head;
@@ -48,7 +45,7 @@ export const Head = styled.header`
 
         & span{ 
             display: inline-block;
-            color: $font-color-aside;
+            color: #A7A7A7;
             align-self: flex-end;
             font-size: 1.75vmax; 
         }
@@ -164,26 +161,6 @@ export const Foot = styled.footer`
         display: flex;
         justify-content: flex-end;
         font-size: 10vmax;
-    }
-
-    & div:nth-child(1){
-        display: grid;
-
-        & a:nth-child(1) {
-          writing-mode: sideways-lr; 
-          text-orientation: sideways;
-        }
-  
-        & a:nth-child(2) {
-          margin: 1vh 0px 1vh 0px;
-          writing-mode: sideways-lr; 
-          text-orientation: upright;
-        }
-  
-        & a:nth-child(3) {
-          writing-mode: sideways-lr; 
-          text-orientation: sideways;
-        }
     }
 
     ${BreakPoints.desktop}{

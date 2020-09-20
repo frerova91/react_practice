@@ -61,3 +61,4 @@ export const Expertice = () => {
     </Layout>
   )
 }
+export { Expertice as default } from './Expertice'

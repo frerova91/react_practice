@@ -17,6 +17,7 @@ module.exports = (env, { mode }) => ({
   devServer: {
     hot: true, // activando hotmodule del lado de webpack
     contentBase: './dist',
+    compress: true,
     open: false,
     port: 8080
   },

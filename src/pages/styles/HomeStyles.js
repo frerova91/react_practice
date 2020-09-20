@@ -1,12 +1,7 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
+import { outin } from '../../styles/Animations'
 import { bps as BreakPoints } from '../../styles/BreakPoints.js'
 
-const outin = keyframes`
-    from {opacity: 0.1;  translate: 1000px;}
-    50% { opacity: 0.3; }
-    75% {opacity: 0.7;}
-    to {opacity:1; translate: 0px;}
-`
 export const Layout = styled.div`
     height: 100vh;
     width: 100%;
@@ -29,13 +24,8 @@ export const Layout = styled.div`
 
 export const Head = styled.header`
     grid-area: head;
-    align-self: center;
-    height:auto;
-    width: 100%;
-    display: grid;
-    grid-auto-flow: column;
-    align-content: start;
-
+    display:grid;
+    grid-auto-flow:column;
 
     & > a > Svg{
         cursor: pointer;
@@ -196,8 +186,7 @@ export const Main = styled.main`
             & > img{
                 animation: ${outin};
                 animation-duration: 1s;
-                animation-timing-function: ease-in-out ;
-                animation-fill-mode: forwards;
+                animation-timing-function: linear ;
 
                 grid-column: 2/3;
                 grid-row: 1/2;

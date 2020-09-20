@@ -51,3 +51,4 @@ export const About = () => {
     </Layout>
   )
 }
+export { About as default } from './About'

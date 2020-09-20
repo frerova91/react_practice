@@ -41,6 +41,8 @@ export const Skilled = () => {
         <h1>03</h1>
 
       </Foot>
+
     </Layout>
   )
 }
+export { Skilled as default } from './Skilled'
