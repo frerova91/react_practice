@@ -3,7 +3,7 @@ import { bps as BreakPoints } from '../../../styles/BreakPoints'
 
 export const Links = styled.div`
 
-    display:grid;
+    display:inline-block;
 
     & > a {
         display:none;
@@ -33,7 +33,9 @@ export const Links = styled.div`
 
     ${BreakPoints.desktop}{
             &  a{
-                display:block;
+                height:auto;
+                min-width: 20px;
+                display: flex;
             }
         }
 `

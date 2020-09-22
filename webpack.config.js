@@ -3,7 +3,19 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const Webpack = require('webpack')
 const Path = require('path')
 
-const productionPlugins = new CompressionPlugin({ algorithm: 'gzip' })
+const productionPlugins = new CompressionPlugin({
+  filename: '[path][base].br',
+  algorithm: 'brotliCompress',
+  test: /\.(js|css|html|svg)$/,
+  compressionOptions: {
+    // zlib’s `level` option matches Brotli’s `BROTLI_PARAM_QUALITY` option.
+    level: 11
+  },
+  threshold: 10240,
+  minRatio: 0.8,
+  deleteOriginalAssets: false
+})
+
 const developmentPlugins = new Webpack.HotModuleReplacementPlugin()
 
 module.exports = (env, { mode }) => ({
@@ -34,6 +46,14 @@ module.exports = (env, { mode }) => ({
     new HtmlWebpackPlugin({
       title: 'Practica de React.js',
       template: 'src/index.html'
+      // meta: {
+      // 'Content-Security-Policy': { 'http-equiv': 'Content-Security-Policy', content: 'default-src https:' },
+      // Will generate: <meta http-equiv="Content-Security-Policy" content="default-src https:">
+      // Which equals to the following http header: `Content-Security-Policy: default-src https:`
+      // 'set-cookie': { 'http-equiv': 'set-cookie', content: 'name=value; expires=date; path=url' }
+      // Will generate: <meta http-equiv="set-cookie" content="value; expires=date; path=url">
+      // Which equals to the following http header: `set-cookie: value; expires=date; path=url`
+      // }
     })
   ].filter(Boolean),
   module: {
@@ -53,7 +73,9 @@ module.exports = (env, { mode }) => ({
         loader: 'url-loader',
         options: {
           limit: 9000,
-          encoding: true
+          encoding: true,
+          name: '[hash].[ext]',
+          outputPath: 'assets'
           // el fallback loader por default de alternativa es file loader
         }
       }

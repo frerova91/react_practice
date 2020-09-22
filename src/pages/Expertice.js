@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Layout, Head, Main, Foot } from './styles/ExperticeStyles'
 import { NavLinks } from '../components/custom/NavLinks/NavLinks'
 import { SvgComponent as Svg } from '../components/custom/SvgButton/index'
@@ -16,12 +16,6 @@ import imgF from '../assets/titles/webpack.webp'
 export const Expertice = () => {
   document.body.style.background = `rgba(41,41,41,0.7) url(${img}) no-repeat fixed center / cover`
   document.body.style.backgroundBlendMode = 'multiply'
-
-  useEffect(() => {
-    return () => {
-
-    }
-  }, [])
 
   return (
     <Layout>

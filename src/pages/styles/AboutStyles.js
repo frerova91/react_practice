@@ -230,5 +230,5 @@ export const Main = styled.main`
 
 export const Foot = styled.footer`
     grid-area:foot;
-    display:grid;
+    align-self: center;
 `

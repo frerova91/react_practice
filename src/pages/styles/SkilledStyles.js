@@ -164,14 +164,13 @@ export const Foot = styled.footer`
     }
 
     ${BreakPoints.desktop}{
-        width: 40%;
         position: relative;
 
         & h1{
             display: flex;
             justify-content: flex-end;
             font-size: 10vmax;
-            left: 40%;
+            left: 20%;
             bottom: 10%;
             position: absolute;
             z-index: 1;

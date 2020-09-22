@@ -3,8 +3,8 @@ import { Router } from '@reach/router'
 import { GlobalStyles } from './styles/GlobalStyles.js'
 
 // Use loadable Components if you need SSR or Library splitting
-const NotFound = lazy(() => import('./pages/NotFound'))
 const Expertice = lazy(() => import('./pages/Expertice'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 const Skilled = lazy(() => import('./pages/Skilled'))
 const About = lazy(() => import('./pages/About'))
 const Home = lazy(() => import('./pages/Home'))

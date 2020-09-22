@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { Link } from '@reach/router'
 import { Head, Main, Foot, Layout } from './styles/MenuStyles'
 import SvgX from '../components/custom/SvgX/index.js'
@@ -22,7 +22,7 @@ export const Menu = () => {
   const ref3 = useRef([])
   const ref4 = useRef([])
 
-  const useHandleEvent = (i, e) => {
+  const useHandleOver = (i, e) => {
     switch (i) {
       case 0:
         // console.log(e.target.text)
@@ -49,7 +49,7 @@ export const Menu = () => {
     }
   }
 
-  const handleOut = (e) => {
+  const useHandleOut = (e) => {
     // console.log(e.target.text)
     document.body.style.backgroundImage = 'none'
     document.body.style.backgroundColor = '#151515'
@@ -71,12 +71,12 @@ export const Menu = () => {
     }
   }
 
-  useEffect(() => {
-    // console.log('componentDidMount')
-    return () => {
+  // useEffect(() => {
+  //   // console.log('componentDidMount')
+  //   return () => {
 
-    }
-  }, [])
+  //   }
+  // }, [])
 
   return (
     <Layout>
@@ -86,13 +86,14 @@ export const Menu = () => {
       </Head>
 
       <Main>
-        <h1><Link ref={ref1} onMouseOut={(e) => handleOut(e)} onMouseOver={(e) => useHandleEvent(0, e)} to='/'>{name[0]}</Link></h1>
-        <h1><Link ref={ref2} onMouseOut={(e) => handleOut(e)} onMouseOver={(e) => useHandleEvent(1, e)} to='/about'>{name[1]}</Link></h1>
-        <h1><Link ref={ref3} onMouseOut={(e) => handleOut(e)} onMouseOver={(e) => useHandleEvent(2, e)} to='/skilled'>{name[2]}</Link></h1>
-        <h1><Link ref={ref4} onMouseOut={(e) => handleOut(e)} onMouseOver={(e) => useHandleEvent(3, e)} to='/expertice'>{name[3]}</Link></h1>
+        <h1><Link ref={ref1} onMouseOut={(e) => useHandleOut(e)} onMouseOver={(e) => useHandleOver(0, e)} to='/'>{name[0]}</Link></h1>
+        <h1><Link ref={ref2} onMouseOut={(e) => useHandleOut(e)} onMouseOver={(e) => useHandleOver(1, e)} to='/about'>{name[1]}</Link></h1>
+        <h1><Link ref={ref3} onMouseOut={(e) => useHandleOut(e)} onMouseOver={(e) => useHandleOver(2, e)} to='/skilled'>{name[2]}</Link></h1>
+        <h1><Link ref={ref4} onMouseOut={(e) => useHandleOut(e)} onMouseOver={(e) => useHandleOver(3, e)} to='/expertice'>{name[3]}</Link></h1>
         {/* {
           [0, 1, 2, 3].map((el, i) => <h1 key={i}><Link onMouseOver={() => useHandleEvent(i)} values={i} key={i} to='/'>{name[i]}</Link></h1>)
         } */}
+
       </Main>
 
       <Foot>

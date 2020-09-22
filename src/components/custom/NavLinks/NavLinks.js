@@ -8,25 +8,26 @@ export const NavLinks = () => {
   const routes = ['/', '/about', '/skilled', '/expertice']
   const currentLocation = window.location.pathname
 
-  const foward = routes.map((el, i) => {
+  const Myfoward = routes.map((el, i) => {
     const result = currentLocation === el ? routes[i + 1] : null
     return result
   })
 
-  const backward = routes.map((el, i) => {
+  const Mybackward = routes.map((el, i) => {
     const result = currentLocation === el ? routes[i - 1] : null
     return result
   })
 
-  const next = foward.filter((el, i) => {
+  const next = Myfoward.filter((el, i) => {
+    // cuando el elemento del array es diferente de null trae una ruta de lo contrario es un string vacio
     let res
-    res = el !== null ? res = el : res = ''
+    res = el !== null ? res = el : res = el
     return res
   })
 
-  const back = backward.filter((el, i) => {
+  const back = Mybackward.filter((el, i) => {
     let res
-    res = el !== null ? res = el : res = ''
+    res = el !== null ? res = el : res = el
     return res
   })
 

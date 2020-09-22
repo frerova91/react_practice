@@ -4,20 +4,16 @@
   "description": "Este es un proyecto de Practica de React.js",
   "main": "index.js",
   "scripts": {
-    "ser:sta": "npm serve dist -s",
-    "build": "webpack --mode production && npx serve dist -s ",
-    "dev": "webpack-dev-server --history-api-fallback ",
     "ser:dev": "webpack --mode development && npx serve dist -s",
-    "lint": "standard --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production && npx serve dist -s ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --history-api-fallback ",
+    "lint": "standard --fix"
   },
   "keywords": [],
   "author": "FR",
   "license": "ISC",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@fortawesome/react-fontawesome": "^0.1.11",
     "@reach/router": "^1.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
