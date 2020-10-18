@@ -6,11 +6,11 @@ export const Layout = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: minmax(auto,1fr);
-    grid-template-rows: minmax(auto,15%) minmax(auto,1fr) minmax(auto,25%);
+    grid-template-rows: minmax(auto,1fr) minmax(auto,25%) minmax(auto,15%);
     grid-template-areas: 
-    "head" 
     "main" 
-    "foot" ;
+    "foot" 
+    "head" ;
     padding: 30px 40px 30px 40px;
 
     ${BreakPoints.desktop}{

@@ -8,9 +8,9 @@ export const Layout = styled.div`
     grid-template-columns: minmax(auto,1fr);
     grid-template-rows: minmax(auto,15%) minmax(auto,1fr) minmax(auto,15%);
     grid-template-areas: 
-        "head"
-        "main"
         "foot"
+        "main"
+        "head"
     ;
     padding: 40px 40px 40px 40px;
     
@@ -49,6 +49,7 @@ export const Head = styled.header`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    z-index: 999;
 
     & > span{
        display: none;
@@ -74,7 +75,7 @@ export const Main = styled.main`
     align-content: center;
     justify-content: left;
     letter-spacing: 1px;
-    word-break: break-all;
+    /*word-break: break-all;*/
     font-size: 3vmax;
     position: relative;
 
@@ -230,5 +231,6 @@ export const Main = styled.main`
 
 export const Foot = styled.footer`
     grid-area:foot;
+    justify-self:left;
     align-self: center;
 `

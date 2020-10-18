@@ -2,14 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Web developer Profesional Porfolio"/>
-    <!-- maximum-scale=1.0 user-scalable=no -->
+    <!-- <link rel="preload" href="workbox-02c0283b.js" as="script" crossorigin> -->
     <link rel="icon" href="data:,"/>
-<!--     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" type="text/css"/> -->
     <title>Portfolio_FR</title>
 </head>
 <body>
     <div id='app'></div>
+    <script>
+        if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+          navigator.serviceWorker
+            .register("/service-worker.js")
+            .then(registration => {
+              //console.warn("SW registrado");
+            })
+            .catch(registrationError => {
+              //console.warn("SW error", registrationError);
+            });
+        });
+      }
+    </script>
+    <noscript>Your browser does not support JavaScript!</noscript>
 </body>
 </html>

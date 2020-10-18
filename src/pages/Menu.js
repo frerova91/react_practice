@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Link } from '@reach/router'
 import { Head, Main, Foot, Layout } from './styles/MenuStyles'
 import SvgX from '../components/custom/SvgX/index.js'
@@ -12,37 +12,45 @@ import imgP from '../assets/background/background-patern.webp'
 
 export const Menu = () => {
   // console.log('componentWillMount')
-  document.body.style.backgroundImage = 'none'
-  document.body.style.backgroundColor = '#151515'
-  document.body.style.backgroundBlendMode = 'multiply'
-  const name = ['HOME', 'ABOUT', 'SKILLED', 'EXPERTICE']
+  // document.body.style.backgroundImage = 'none'
+  // document.body.style.background = '#151515'
+  // document.body.style.backgroundBlendMode = 'multiply'
 
+  const routes = ['/', '/about', '/skilled', '/expertice']
+  const names = ['HOME', 'ABOUT', 'SKILLED', 'EXPERTICE']
+
+  const ref0 = useRef([])
   const ref1 = useRef([])
   const ref2 = useRef([])
   const ref3 = useRef([])
   const ref4 = useRef([])
+  const myRefs = [ref1, ref2, ref3, ref4]
 
   const useHandleOver = (i, e) => {
     switch (i) {
       case 0:
         // console.log(e.target.text)
         ref1.current.text = '01 - HOME'
-        document.body.style.background = `url(${imgD}) no-repeat fixed center / cover`
+        // document.body.style.background = `url(${imgD}) no-repeat fixed center / cover`
+        ref0.current.style.background = `url(${imgD}) no-repeat fixed center / cover`
         break
       case 1:
         // console.log(e.target.text)
         ref2.current.text = '02 - ABOUT'
-        document.body.style.background = `url(${imgR}) no-repeat fixed center / cover`
+        // document.body.style.background = `url(${imgR}) no-repeat fixed center / cover`
+        ref0.current.style.background = `url(${imgR}) no-repeat fixed center / cover`
         break
       case 2:
         // console.log(e.target.text)
         ref3.current.text = '03 - SKILLED'
-        document.body.style.background = `url(${imgS}) no-repeat fixed center / cover`
+        // document.body.style.background = `url(${imgS}) no-repeat fixed center / cover`
+        ref0.current.style.background = `url(${imgS}) no-repeat fixed center / cover`
         break
       case 3:
         // console.log(e.target.text)
         ref4.current.text = '04 - EXPERTICE'
-        document.body.style.background = `url(${imgP}) no-repeat fixed center / cover rgba(21,21,21,0.5)`
+        // document.body.style.background = `url(${imgP}) no-repeat fixed center / cover rgba(21,21,21,0.5)`
+        ref0.current.style.background = `url(${imgP}) no-repeat fixed center / cover rgba(21,21,21,0.5)`
         break
       default:
         break
@@ -51,8 +59,9 @@ export const Menu = () => {
 
   const useHandleOut = (e) => {
     // console.log(e.target.text)
-    document.body.style.backgroundImage = 'none'
-    document.body.style.backgroundColor = '#151515'
+    // document.body.style.backgroundImage = 'none'
+    // document.body.style.backgroundColor = '#151515'
+    ref0.current.style.background = '#151515'
     if (e.target.text === '01 - HOME') {
       // console.log(ref1)
       ref1.current.text = 'HOME'
@@ -71,28 +80,27 @@ export const Menu = () => {
     }
   }
 
-  // useEffect(() => {
-  //   // console.log('componentDidMount')
-  //   return () => {
+  useEffect(() => {
+    // console.log('componentDidMount')
 
-  //   }
-  // }, [])
+    ref0.current.style.background = '#151515'
+    ref0.current.style.backgroundBlendMode = 'multiply'
+  }, [])
 
   return (
-    <Layout>
+    <Layout ref={ref0}>
       <Head>
         <SvgX />
         <SvgLogoWhite />
       </Head>
 
       <Main>
-        <h1><Link ref={ref1} onMouseOut={(e) => useHandleOut(e)} onMouseOver={(e) => useHandleOver(0, e)} to='/'>{name[0]}</Link></h1>
+        {/* <h1><Link ref={ref1} onMouseOut={(e) => useHandleOut(e)} onMouseOver={(e) => useHandleOver(0, e)} to='/'>{name[0]}</Link></h1>
         <h1><Link ref={ref2} onMouseOut={(e) => useHandleOut(e)} onMouseOver={(e) => useHandleOver(1, e)} to='/about'>{name[1]}</Link></h1>
         <h1><Link ref={ref3} onMouseOut={(e) => useHandleOut(e)} onMouseOver={(e) => useHandleOver(2, e)} to='/skilled'>{name[2]}</Link></h1>
-        <h1><Link ref={ref4} onMouseOut={(e) => useHandleOut(e)} onMouseOver={(e) => useHandleOver(3, e)} to='/expertice'>{name[3]}</Link></h1>
-        {/* {
-          [0, 1, 2, 3].map((el, i) => <h1 key={i}><Link onMouseOver={() => useHandleEvent(i)} values={i} key={i} to='/'>{name[i]}</Link></h1>)
-        } */}
+        <h1><Link ref={ref4} onMouseOut={(e) => useHandleOut(e)} onMouseOver={(e) => useHandleOver(3, e)} to='/expertice'>{name[3]}</Link></h1> */}
+
+        {[0, 1, 2, 3].map((el, i) => <h1 key={i}><Link ref={myRefs[i]} onMouseOut={(e) => useHandleOut(e)} onMouseOver={(e) => useHandleOver(i, e)} to={routes[i]}>{names[i]}</Link></h1>)}
 
       </Main>
 

@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Layout, Head, Main, Foot } from './styles/SkilledStyles'
 import { SvgComponent as Svg } from '../components/custom/SvgButton'
 import { NavLinks } from '../components/custom/NavLinks/NavLinks'
 import img from '../assets/background/background-stroke.webp'
 
 export const Skilled = () => {
-  document.body.style.background = `rgba(21,21,21,0.3) url(${img}) no-repeat fixed left / cover`
-  document.body.style.backgroundBlendMode = 'multiply'
+  // document.body.style.background = `rgba(21,21,21,0.3) url(${img}) no-repeat fixed left / cover`
+  // document.body.style.backgroundBlendMode = 'multiply'
+
+  const ref0 = useRef([])
+
+  useEffect(() => {
+    ref0.current.style.background = `rgba(21,21,21,0.3) url(${img}) no-repeat fixed left / cover`
+  }, [])
 
   return (
-    <Layout>
+    <Layout ref={ref0}>
       <Head>
         <Svg />
         <span>Skilled</span>

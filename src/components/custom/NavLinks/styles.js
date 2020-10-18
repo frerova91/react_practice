@@ -1,18 +1,21 @@
 import styled from 'styled-components'
 import { bps as BreakPoints } from '../../../styles/BreakPoints'
 
-export const Links = styled.div`
+export const Links = styled.nav`
 
-    display:inline-block;
+    height: auto;
+    width:100%;
+    display: block;
+
 
     & > a {
+        /*nota cursor:pointer causa layout shifts*/
         display:none;
         color: white;
-        cursor: pointer;
-        position:relative;
-        font-weight: 300;
-        font-size: 1.5rem;
+        font-weight: 800;
+        font-size: 1.25rem;
         text-decoration: none;
+
     }
 
     ${'' /* & a:nth-child(1) {
@@ -32,10 +35,9 @@ export const Links = styled.div`
     } */}
 
     ${BreakPoints.desktop}{
-            &  a{
-                height:auto;
-                min-width: 20px;
-                display: flex;
+            & > a{
+                display:flex;
+                justify-content:center;
             }
         }
 `

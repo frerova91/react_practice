@@ -27,7 +27,9 @@ export const GlobalStyles = createGlobalStyle`
         
     }
 
-    * > img { width: 100%;}
+    /*aqui va #app*/
+
+    * > img {  heigth:auto; width: 100%; aspect-ratio: attr(width) / attr(height);}
 
     *, *:before, *:after {
         box-sizing: inherit;

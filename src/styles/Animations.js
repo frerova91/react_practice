@@ -1,7 +1,7 @@
 import { keyframes } from 'styled-components'
 
 export const outin = keyframes`
-    from {opacity: 0.1;  transform: translateX(1000px);}
+    from {opacity: 0.1;  transform: translateX(1500px);}
     to {opacity:0.7; transform:translateX(0px);}
 `
 export const scroll = keyframes`

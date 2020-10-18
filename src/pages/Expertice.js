@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Layout, Head, Main, Foot } from './styles/ExperticeStyles'
 import { NavLinks } from '../components/custom/NavLinks/NavLinks'
 import { SvgComponent as Svg } from '../components/custom/SvgButton/index'
@@ -14,11 +14,18 @@ import imgE from '../assets/titles/reactA.webp'
 import imgF from '../assets/titles/webpack.webp'
 
 export const Expertice = () => {
-  document.body.style.background = `rgba(41,41,41,0.7) url(${img}) no-repeat fixed center / cover`
-  document.body.style.backgroundBlendMode = 'multiply'
+  // document.body.style.background = `rgba(41,41,41,0.7) url(${img}) no-repeat fixed center / cover`
+  // document.body.style.backgroundBlendMode = 'multiply'
+
+  const ref0 = useRef([])
+
+  useEffect(() => {
+    ref0.current.style.background = `rgba(41,41,41,0.7) url(${img}) no-repeat fixed center / cover`
+    ref0.current.style.backgroundBlendMode = 'multiply'
+  }, [])
 
   return (
-    <Layout>
+    <Layout ref={ref0}>
 
       <Head>
         <Svg />

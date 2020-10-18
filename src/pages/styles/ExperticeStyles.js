@@ -5,9 +5,9 @@ export const Layout = styled.div`
     height: 100vh;
     width: 100%;
     display: grid;
-    grid-template-areas: "head" "main" "foot";
+    grid-template-areas: "foot" "main" "head";
     grid-template-columns: minmax(auto,1fr);
-    grid-template-rows: minmax(auto, 15%) minmax(auto,70%) minmax(auto,15%);
+    grid-template-rows: minmax(auto, 5%) minmax(auto,1fr) minmax(auto,15%);
     padding: 30px 40px 30px 40px;
     position:relative;
 
@@ -116,7 +116,7 @@ export const Main = styled.main`
                 width: 30vmax;
                 left:35%;
                 top: 27%;
-                transform: scale(1.6);
+                transform: scale(2);
             } 
 
         }
@@ -144,6 +144,7 @@ export const Main = styled.main`
 
 export const Foot = styled.footer`
     grid-area:foot;
+    justify-self:left;
     align-self: center;
 
 `

@@ -6,15 +6,15 @@ export const Layout = styled.div`
     height: 100vh;
     width: 100%;
     display: grid;
-    grid-template-areas: "head" "main" "foot";
     grid-template-columns: minmax(auto,1fr);
-    grid-template-rows: minmax(auto, 15%) minmax(auto,70%) minmax(auto,15%);
+    grid-template-rows: minmax(auto, 10%) minmax(auto,75%) minmax(auto,15%);
     grid-template-areas: 
-        "head"
-        "main"
         "foot"
+        "main"
+        "head"
     ;
     padding: 30px 40px 30px 40px;
+    position: relative;
 
     ${BreakPoints.desktop}{
         grid-template-columns: minmax(15%,auto) minmax(70%,auto) minmax(15%,auto);
@@ -35,6 +35,7 @@ export const Head = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 
     & span{ display: none; }
 
@@ -151,28 +152,27 @@ export const Main = styled.main`
 export const Foot = styled.footer`
     grid-area: foot;
 
-    justify-content: left;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    align-self:center;
+    justify-content:left;
+
 
     & h1{
         color:#686868;
         display: flex;
         justify-content: flex-end;
         font-size: 10vmax;
+        position: absolute;
+        top:80%;
+        left:70%;
     }
 
     ${BreakPoints.desktop}{
         position: relative;
 
         & h1{
-            display: flex;
-            justify-content: flex-end;
-            font-size: 10vmax;
-            left: 20%;
-            bottom: 10%;
-            position: absolute;
+            top:-200%;
+            left:20%;
             z-index: 1;
         }
     }

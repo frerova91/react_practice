@@ -2,7 +2,7 @@ import * as React from 'react'
 
 function SvgLogo (props) {
   return (
-    <svg width='1em' height='1em' viewBox='0 0 66.144 48.104' {...props}>
+    <svg width='2em' height='2em' viewBox='0 0 66.144 48.104' {...props}>
       <defs>
         <style>{'.prefix__b{fill:#7e7e7e}'}</style>
       </defs>

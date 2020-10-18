@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Layout, Head, Main, Foot } from './styles/AboutStyles'
 import { SvgComponent as Svg } from '../components/custom/SvgButton/index'
 import { NavLinks } from '../components/custom/NavLinks/NavLinks'
@@ -6,11 +6,17 @@ import SvgLogo from '../components/custom/SvgLogo/index'
 import img from '../assets/background/background-rain.webp'
 
 export const About = () => {
-  document.body.style.background = ` #151515 url(${img}) no-repeat fixed center / cover`
-  document.body.style.backgroundBlendMode = 'normal'
+  // document.body.style.background = ` #151515 url(${img}) no-repeat fixed center / cover`
+  // document.body.style.backgroundBlendMode = 'normal'
+
+  const ref0 = useRef([])
+
+  useEffect(() => {
+    ref0.current.style.background = `#151515 url(${img}) no-repeat fixed center / cover`
+  }, [])
 
   return (
-    <Layout>
+    <Layout ref={ref0}>
 
       <Head>
         <Svg />

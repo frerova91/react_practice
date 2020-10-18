@@ -1,6 +1,9 @@
-{
-    "plugins": [
-        "babel-plugin-styled-components",
-        "@babel/plugin-syntax-dynamic-import"   
-    ]
-  }
+ {
+     "plugins": [
+         ["babel-plugin-styled-components", {
+      		"pure": true
+    	}],
+         "@babel/plugin-syntax-dynamic-import",
+         "@babel/plugin-transform-runtime"   
+     ]
+ } 

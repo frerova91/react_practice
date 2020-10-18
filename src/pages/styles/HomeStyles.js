@@ -6,10 +6,14 @@ export const Layout = styled.div`
     height: 100vh;
     width: 100%;
     display: grid;
-    grid-template-areas: "head" "main" "foot";
+    grid-template-areas: "foot" "main" "head";
     grid-template-columns: minmax(auto,1fr);
     grid-template-rows: minmax(auto, 15%) minmax(auto,70%) minmax(auto,15%);
     padding: 30px 40px 30px 40px;
+    /*
+    background: ${props => props.theme.bgApp};
+    background-blend-mode: ${props => props.theme.bgBlend};
+    */
 
     ${BreakPoints.desktop}{
         grid-template-columns: minmax(auto,15%) minmax(auto,70%) minmax(auto,15%);
@@ -27,7 +31,7 @@ export const Head = styled.header`
     display:grid;
     grid-auto-flow:column;
 
-    & > a > Svg{
+    & Svg{
         cursor: pointer;
     }
 
@@ -37,9 +41,10 @@ export const Head = styled.header`
         font-weight:300;
         letter-spacing:4px;
         justify-self: center;
-        align-self: end;
+        /*align-self: end;*/
         padding: 0;
-        top: 20%;
+        /*top:30%;*/
+        bottom: 85%;
         position: absolute;
     }
     
@@ -49,8 +54,7 @@ export const Head = styled.header`
 
     ${BreakPoints.desktop}{
 
-        & > a > Svg {
-            align-self: center;
+        & Svg {
             justify-self: left;
         }
 
@@ -93,6 +97,7 @@ export const Main = styled.main`
         font-weight: 200;
         word-spacing: 1px;
         word-wrap: break-word;
+        /*padding-top:10%;*/
 
         & > span {
             color:#151515;
@@ -123,8 +128,7 @@ export const Main = styled.main`
             width: 100%;
             display: flex;
             align-items: flex-end;
-            position: absolute;
-            top: 15%;
+            position: relative;
         }
 
         & > div {
@@ -202,6 +206,7 @@ export const Main = styled.main`
 `
 export const Foot = styled.footer`
     grid-area: foot;
+    justify-self:left;
     align-self: center;
 
 `
