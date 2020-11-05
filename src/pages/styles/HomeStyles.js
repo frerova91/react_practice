@@ -126,9 +126,11 @@ export const Main = styled.main`
             font-size: 4rem;
             height: 100%;
             width: 100%;
+            top:1%;
+            right: 30%;
             display: flex;
             align-items: flex-end;
-            position: relative;
+            position: absolute;
         }
 
         & > div {

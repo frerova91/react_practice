@@ -7,7 +7,7 @@ export const Layout = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: minmax(auto,1fr);
-    grid-template-rows: minmax(auto, 10%) minmax(auto,75%) minmax(auto,15%);
+    grid-template-rows: minmax(auto, 5%) minmax(auto,1fr) minmax(auto,15%);
     grid-template-areas: 
         "foot"
         "main"
@@ -34,7 +34,7 @@ export const Head = styled.header`
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     
 
     & span{ display: none; }
@@ -163,8 +163,8 @@ export const Foot = styled.footer`
         justify-content: flex-end;
         font-size: 10vmax;
         position: absolute;
-        top:80%;
-        left:70%;
+        top:71%;
+        left:65%;
     }
 
     ${BreakPoints.desktop}{

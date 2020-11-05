@@ -31,14 +31,22 @@ export const Head = styled.header`
     width:100%;
     display:grid;
     grid-auto-flow:column;
-    align-content:center;
-    justify-content:space-between;
+    align-content:end;
+    font-size:1.25em;
+    justify-content:space-evenly;
+
+    & > Svg{
+        align-self:center;
+    }
 
     & > a {
         align-self:center;
     }
 
     ${BreakPoints.desktop}{
+
+        justify-content:space-between;
+        font-size:1em;
         grid-column: 1/3;
         grid-row: 1/2;
         align-content: center;

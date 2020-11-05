@@ -88,6 +88,7 @@ export const Menu = () => {
   }, [])
 
   return (
+
     <Layout ref={ref0}>
       <Head>
         <SvgX />

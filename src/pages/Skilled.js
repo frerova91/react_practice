@@ -2,12 +2,14 @@ import React, { useRef, useEffect } from 'react'
 import { Layout, Head, Main, Foot } from './styles/SkilledStyles'
 import { SvgComponent as Svg } from '../components/custom/SvgButton'
 import { NavLinks } from '../components/custom/NavLinks/NavLinks'
+import { NavLinkMobile } from '../components/custom/NavbarM/NavLinkMobile'
+import { useWindowResize } from '../components/hooks/useWindowResize'
 import img from '../assets/background/background-stroke.webp'
 
 export const Skilled = () => {
   // document.body.style.background = `rgba(21,21,21,0.3) url(${img}) no-repeat fixed left / cover`
   // document.body.style.backgroundBlendMode = 'multiply'
-
+  const [width, height] = useWindowResize()
   const ref0 = useRef([])
 
   useEffect(() => {
@@ -17,7 +19,7 @@ export const Skilled = () => {
   return (
     <Layout ref={ref0}>
       <Head>
-        <Svg />
+        {`${width}` <= 768 && `${height}` <= 1024 ? <NavLinkMobile /> : <Svg />}
         <span>Skilled</span>
       </Head>
 
@@ -25,7 +27,7 @@ export const Skilled = () => {
         <div>
           <h3>Skilled in -</h3>
 
-          <p>The main area of my expertice is front-end development, React is what i will normaly use for building web Apps with custom plugins, features, and layouts.</p><p>But i allways ready for learn some new languages, frameworks or libraries that can improve my workflow to be more efficient. Also i have some expirience in Full stack with React, mongodb, mysql, nodejs, express, graphql and ORM like Mongoose, building statick web sites, PWA & ServerLess</p>
+          <p>The main area of my expertise is front-end development, React is what I will normally use for building web Apps with custom plugins, features, and layouts.</p><p>But I’m always ready for learn some new languages, frameworks or libraries that can improve my workflow to be more efficient. Also, I have some experience in Full stack with React, mongodb, mysql, nodejs, express, graphql and ORM like Mongoose, building static web sites, PWA & ServerLess</p>
         </div>
 
         <div>

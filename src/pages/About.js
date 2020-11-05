@@ -2,12 +2,16 @@ import React, { useRef, useEffect } from 'react'
 import { Layout, Head, Main, Foot } from './styles/AboutStyles'
 import { SvgComponent as Svg } from '../components/custom/SvgButton/index'
 import { NavLinks } from '../components/custom/NavLinks/NavLinks'
+import { NavLinkMobile } from '../components/custom/NavbarM/NavLinkMobile'
+import { useWindowResize } from '../components/hooks/useWindowResize'
 import SvgLogo from '../components/custom/SvgLogo/index'
 import img from '../assets/background/background-rain.webp'
 
 export const About = () => {
   // document.body.style.background = ` #151515 url(${img}) no-repeat fixed center / cover`
   // document.body.style.backgroundBlendMode = 'normal'
+
+  const [width, height] = useWindowResize()
 
   const ref0 = useRef([])
 
@@ -17,9 +21,8 @@ export const About = () => {
 
   return (
     <Layout ref={ref0}>
-
       <Head>
-        <Svg />
+        {`${width}` <= 768 && `${height}` <= 1024 ? <NavLinkMobile /> : <Svg />}
         <span>About</span>
       </Head>
 
@@ -27,7 +30,7 @@ export const About = () => {
         <section>
           <h3>About Me -</h3>
 
-          <p>Hello I'm Freddy Rojas a system engineer with knowledge in front-end and  back-end tecnologies. always learnnig and development new ways to improve web desing. Excited about working in groups to improve my professional skills and share what i know.</p>
+          <p>Hello I'm Freddy Rojas a system engineer with knowledge in front-end and  back-end technologies. Always learning and developing new ways to improve web desing. Excited about working in groups to improve my professional skills and share what I know.</p>
         </section>
 
         <section>

@@ -94,8 +94,10 @@ const productionPlugins = [
 ]
 
 const developmentPlugins = [
-  new Webpack.HotModuleReplacementPlugin()
-  // new BundleAnalyzerPlugin()
+  new Webpack.HotModuleReplacementPlugin(),
+  new BundleAnalyzerPlugin({
+    openAnalyzer: false
+  })
 ]
 
 // - - - - MAIN WEBPACK CONFIGURATIONS - - - -

@@ -6,13 +6,13 @@ export const Layout = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: minmax(auto,1fr);
-    grid-template-rows: minmax(auto,15%) minmax(auto,1fr) minmax(auto,15%);
+    grid-template-rows: minmax(auto,5%) minmax(auto,1fr) minmax(auto,15%);
     grid-template-areas: 
         "foot"
         "main"
         "head"
     ;
-    padding: 40px 40px 40px 40px;
+    padding: 30px 40px 30px 40px;
     
 
     ${BreakPoints.desktop}{
@@ -47,7 +47,7 @@ export const Head = styled.header`
 
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     z-index: 999;
 
@@ -111,9 +111,9 @@ export const Main = styled.main`
             font-size: 10vmax;
             height: 100%;
             width: 100%;
-            top: 95%;
+            top: 85%;
             position: absolute;
-            padding-right: 8%; 
+            padding-right: 5%; 
         }
 
         & > div:nth-child(2) { display: none; }

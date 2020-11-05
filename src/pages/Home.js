@@ -1,9 +1,10 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 // import { NavButton } from '../components/custom/NavButton/index.js'
 import { Head, Main, Foot, Layout } from './styles/HomeStyles.js'
 import { NavLinks } from '../components/custom/NavLinks/NavLinks'
 // import { Layout } from '../components/layout/Layout.js'
 import { SvgComponent as Svg } from '../components/custom/SvgButton/index.js'
+import { NavLinkMobile } from '../components/custom/NavbarM/NavLinkMobile'
 
 import img from '../assets/background/background-default.webp'
 import imgD from '../assets/menu/default.webp'
@@ -49,12 +50,39 @@ export const Home = () => {
     }
   }
 
+  function debounce (fn, ms) {
+    let timer
+    return _ => {
+      clearTimeout(timer)
+      timer = setTimeout(_ => {
+        timer = null
+        fn.apply(this, arguments)
+      }, ms)
+    }
+  }
+
+  // dejaremos esto aqui como muestra pero implementaremos la funcion en un hook para reutilizarla
+  const [windowSize, setWindowSize] = useState([window.innerWidth, window.innerHeight])
+
+  useEffect(() => {
+    const handleWindowResize = debounce(() => {
+      /* console.log('***** debounced resize') See the cool difference in console */
+      setWindowSize([window.innerWidth, window.innerHeight])
+    }, 100) // 100ms
+    window.addEventListener('resize', handleWindowResize)
+    return () => {
+      window.removeEventListener('resize', handleWindowResize)
+    }
+  }, [])
+
   return (
     // <ThemeProvider theme={theme}>
     <Layout style={{ background: `${myBackground}`, backgroundBlendMode: `${myBlendMode}` }}>
 
       <Head>
-        <Svg />
+        {
+          windowSize[0] <= 768 ? <NavLinkMobile /> : <Svg />
+        }
         <h3>WELLCOME</h3>
         <span>Home</span>
       </Head>

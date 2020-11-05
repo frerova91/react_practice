@@ -7,7 +7,7 @@ export const Layout = styled.div`
     display: grid;
     grid-template-areas: "foot" "main" "head";
     grid-template-columns: minmax(auto,1fr);
-    grid-template-rows: minmax(auto, 5%) minmax(auto,1fr) minmax(auto,15%);
+    grid-template-rows: minmax(auto, 1%) minmax(auto,1fr) minmax(auto,25%);
     padding: 30px 40px 30px 40px;
     position:relative;
 
@@ -27,7 +27,7 @@ export const Head = styled.header`
 
     display: grid;
     grid-auto-flow: column;
-    align-items:center;
+    align-items:end;
 
 
     & span{
@@ -66,8 +66,8 @@ export const Main = styled.main`
             font-size: 10vmax; 
             color:#686868; 
             position:absolute;
-            left:70%;
-            top: 83%;
+            left:65%;
+            top: 75%;
         }
 
         & h3{ display:none; }
@@ -102,13 +102,13 @@ export const Main = styled.main`
                 background-color: rgb(41,41,41);
             }
 
-            & > div > img{
-                opacity: 0.7;
+            & > div > img:hover{
+                opacity: 0.5;
                 display: block;
-                transition: transform 0.35s ease-out;
+                /*transition: transform 0.35s ease-out;*/
             }
 
-            & > div > img:active{
+           ${'' /* & > div > img:active{
                 opacity: 1;
                 z-index: 1;
                 position: absolute;
@@ -117,7 +117,18 @@ export const Main = styled.main`
                 left:35%;
                 top: 27%;
                 transform: scale(2);
-            } 
+            } */}
+
+            ${'' /* .active{
+                opacity: 1;
+                z-index: 1;
+                position: absolute;
+                height: auto;
+                width: 30vmax;
+                left:35%;
+                top: 27%;
+                transform: scale(2);
+            } */}
 
         }
 
@@ -138,6 +149,10 @@ export const Main = styled.main`
             display:grid;
             justify-content:center;
             align-content:center;
+
+            span{
+                color:#A7A7A7;
+            }
         }
     }
 `

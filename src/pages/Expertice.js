@@ -1,8 +1,11 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Layout, Head, Main, Foot } from './styles/ExperticeStyles'
 import { NavLinks } from '../components/custom/NavLinks/NavLinks'
 import { SvgComponent as Svg } from '../components/custom/SvgButton/index'
 import { Social } from '../components/custom/Social/index'
+import { NavLinkMobile } from '../components/custom/NavbarM/NavLinkMobile'
+import { useWindowResize } from '../components/hooks/useWindowResize'
+import { Modal } from '../components/custom/Modal/Modal'
 
 import img from '../assets/background/background-patern.webp'
 
@@ -16,8 +19,16 @@ import imgF from '../assets/titles/webpack.webp'
 export const Expertice = () => {
   // document.body.style.background = `rgba(41,41,41,0.7) url(${img}) no-repeat fixed center / cover`
   // document.body.style.backgroundBlendMode = 'multiply'
+  const arrayOfImg = [{ src: `${imgA}` }, { src: `${imgB}` }, { src: `${imgC}` }, { src: `${imgD}` }, { src: `${imgE}` }, { src: `${imgF}` }]
 
+  const [selectedImg, setSelectedImg] = useState(null)
+  const [width, height] = useWindowResize()
   const ref0 = useRef([])
+
+  const handleClick = (e, i) => {
+    setSelectedImg(arrayOfImg[i].src)
+    // console.log(selectedImg)
+  }
 
   useEffect(() => {
     ref0.current.style.background = `rgba(41,41,41,0.7) url(${img}) no-repeat fixed center / cover`
@@ -28,19 +39,23 @@ export const Expertice = () => {
     <Layout ref={ref0}>
 
       <Head>
-        <Svg />
+        {`${width}` <= 768 && `${height}` <= 1024 ? <NavLinkMobile /> : <Svg />}
         <span>Expertice</span>
       </Head>
 
       <Main>
 
         <figure>
-          <div><img src={imgA} alt='Error' /></div>
-          <div><img src={imgB} alt='Error' /></div>
-          <div><img src={imgC} alt='Error' /></div>
-          <div><img src={imgD} alt='Error' /></div>
-          <div><img src={imgE} alt='Error' /></div>
-          <div><img src={imgF} alt='Error' /></div>
+          {/* <div><img className={`${active}`} onClick={(e) => handleClick(e)} src={imgB} alt='Error' /></div>
+          <div><img className={`${active}`} onClick={(e) => handleClick(e)} src={imgC} alt='Error' /></div>
+          <div><img className={`${active}`} onClick={(e) => handleClick(e)} src={imgA} alt='Error' /></div>
+          <div><img className={`${active}`} onClick={(e) => handleClick(e)} src={imgD} alt='Error' /></div>
+          <div><img className={`${active}`} onClick={(e) => handleClick(e)} src={imgE} alt='Error' /></div>
+          <div><img className={`${active}`} onClick={(e) => handleClick(e)} src={imgF} alt='Error' /></div> */}
+          {[0, 1, 2, 3, 4, 5].map((el, i) => <div key={i}><img onClick={(e) => handleClick(e, i)} key={i} src={arrayOfImg[i].src} alt='Course Title' /></div>)}
+
+          {selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />}
+
         </figure>
 
         <span>
