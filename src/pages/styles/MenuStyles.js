@@ -118,6 +118,7 @@ export const Foot = styled.footer`
         & > a {
             text-decoration:none;
             cursor: pointer;
+            font-weight:400;
             color:#DFDFDF;
             font-size: 3.25vmax;
             padding-bottom: 4px;
@@ -140,6 +141,7 @@ export const Foot = styled.footer`
             text-decoration:none;
             color:#DFDFDF;
             font-size: 3.25vmax;
+            font-weight:400;
             padding-bottom: 5%;
         }
 
@@ -186,7 +188,7 @@ export const Foot = styled.footer`
 
             & > a {
                 font-size: 1.25vmax;
-                padding-bottom: 15%;
+                padding-bottom: 10%;
             }
 
         }

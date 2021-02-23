@@ -108,6 +108,7 @@ export const Main = styled.main`
                 /*transition: transform 0.35s ease-out;*/
             }
 
+
            ${'' /* & > div > img:active{
                 opacity: 1;
                 z-index: 1;
@@ -139,7 +140,7 @@ export const Main = styled.main`
             align-items:center;
             color:#686868;
 
-            & h1{position:relative; left:0px; top:0px;}
+            & h1{ position:relative; left:0px; top:0px; font-size:8.75vmax}
             & h3{ display:inline-block; font-size: 3vmax; font-weight:300;}
             & div{ display:flex; }
         }

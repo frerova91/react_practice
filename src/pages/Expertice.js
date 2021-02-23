@@ -65,7 +65,7 @@ export const Expertice = () => {
         </span>
 
         <aside>
-          <span>HOLD CLICK TO ZOOM</span>
+          {/* <span>HOLD CLICK TO ZOOM</span> */}
         </aside>
 
       </Main>

@@ -1,17 +1,20 @@
 import { createGlobalStyle } from 'styled-components'
 
-import RobotWoff1 from './../assets/fonts/Roboto-Medium.ttf'
-import RobotWoff2 from './../assets/fonts/Roboto-Light.ttf'
-import RobotWoff3 from './../assets/fonts/Roboto-Thin.ttf'
+/* import woff1 from './../assets/fonts/variable/Mplus1p-Thin.woff2'
+import woff2 from './../assets/fonts/variable/Mplus1p-Light.woff2'
+import woff3 from './../assets/fonts/variable/Mplus1p-Medium.woff2' */
+
+import font1 from './../assets/fonts/Roboto-Thin.ttf'
+import font2 from './../assets/fonts/Roboto-Light.ttf'
+import font3 from './../assets/fonts/Roboto-Medium.ttf'
 
 export const GlobalStyles = createGlobalStyle`
 
     @font-face{
-        font-family: 'Roboto',sans-serif;
-        font-size: 16px;
-        src: url(${RobotWoff1}) format('ttf'), url(${RobotWoff2}) format('ttf'),url(${RobotWoff3}) format('ttf');;
+        font-family: 'myFont';
+        src: url('${font1}') format('ttf'), url('${font2}') format('ttf'), url('${font3}') format('ttf');
         font-style: normal;
-        font-display: auto;
+        font-display: optional;
     }
 
     html,body {
@@ -21,15 +24,15 @@ export const GlobalStyles = createGlobalStyle`
         overflow: hidden;
         box-sizing: border-box;
         scroll-behavior: auto;
-        font-family: "Roboto",sans-serif;
-        font-size: 16px;
-        /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+        font-family: 'myFont', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 100%;
+        /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
         
     }
 
     /*aqui va #app*/
 
-    * > img {  heigth:auto; width: 100%; aspect-ratio: attr(width) / attr(height);}
+    * > img { display:block; margin: 0 auto; heigth:auto; width: 100%; aspect-ratio: attr(width) / attr(height);}
 
     *, *:before, *:after {
         box-sizing: inherit;

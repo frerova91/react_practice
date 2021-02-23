@@ -144,7 +144,7 @@ module.exports = (env, { mode }) => ({
       }
     },
     {
-      test: /\.(?:jpg|png|gif|woff|eot|ttf|svg|mp4|webm|webp)$/,
+      test: /\.(?:jpg|pdf|png|gif|woff|woff2|eot|ttf|svg|mp4|webm|webp)$/,
       use: {
         loader: 'url-loader',
         options: {

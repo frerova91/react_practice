@@ -141,7 +141,7 @@ export const Main = styled.main`
             padding: 0;
             
                & > p{
-                    font-size: 3vmax;
+                    font-size: 2.75vmax;
                     justify-content: center; 
                }
     
@@ -171,8 +171,8 @@ export const Foot = styled.footer`
         position: relative;
 
         & h1{
-            top:-200%;
-            left:20%;
+            top:-80%;
+            left:15%;
             z-index: 1;
         }
     }

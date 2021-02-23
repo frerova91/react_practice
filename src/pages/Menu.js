@@ -4,6 +4,7 @@ import { Head, Main, Foot, Layout } from './styles/MenuStyles'
 import SvgX from '../components/custom/SvgX/index.js'
 import SvgLogo from '../components/custom/SvgLogo/index.js'
 import SvgLogoWhite from '../components/custom/SvgLogoWhite'
+import ipdf from '../assets/CV/cv.pdf'
 
 import imgD from '../assets/menu/default.webp'
 import imgR from '../assets/background/background-rain.webp'
@@ -118,7 +119,8 @@ export const Menu = () => {
           <h3>Address</h3>
           {/* <a href='mailto:' data-website='moc.atonatut' data-user='@19avoref' /> */}
           <a href='mailto:frerova91@tutanota.com'>Email</a>
-          <Link to='/'>CV - PDF</Link>
+          {/* <Link to={`${pdf}`}>CV - PDF</Link> */}
+          <a href={`${ipdf}`}>CV-PDF</a>
         </div>
 
         <SvgLogo />

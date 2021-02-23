@@ -80,8 +80,6 @@ export const Head = styled.header`
 `
 export const Main = styled.main`
     grid-area: main;
-    height:100%;
-    width: 100%;
     display: grid;
     grid-template-columns: minmax(auto,1fr) minmax(auto,0.3fr);
     grid-template-rows: minmax(auto,1fr);
@@ -158,7 +156,6 @@ export const Main = styled.main`
         & > section{
             grid-column: 2/3;
             grid-row: 1/2;
-            
             padding-left: 5%;
             grid-template-columns: minmax(auto,15%) minmax(auto,1fr);
             grid-template-rows: minmax(auto,1fr) minmax(auto,15%);
@@ -166,8 +163,8 @@ export const Main = styled.main`
 
             & > h1{
                 font-size: 10vmax;
-                top: 7vh;
-                right: -5vw;
+                top: -3vh;
+                right: -7vw;
                 z-index: 2;
             }
 
@@ -190,6 +187,8 @@ export const Main = styled.main`
             }
 
             & > img{
+                object-fit:cover;
+                background-size:cover;
                 animation: ${outin};
                 animation-duration: 1s;
                 animation-timing-function: linear ;
@@ -199,6 +198,7 @@ export const Main = styled.main`
 
                 display: inline-block;
                 opacity: 0.8;
+                
             }
 
 

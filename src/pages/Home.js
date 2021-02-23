@@ -115,6 +115,7 @@ export const Home = () => {
             // id='img'
             src={imgD}
             alt='images'
+            loading='lazy'
           />
         </section>
       </Main>

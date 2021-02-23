@@ -28,7 +28,7 @@ export const Layout = styled.div`
         position: relative;
     
         &::after{
-            color: rgba(45,45,45,0.3);
+            color: rgba(45,45,45,0.5);
             content: "ABOUT";
             letter-spacing: 3vmax;
             font-size: 30vmax;
@@ -233,4 +233,5 @@ export const Foot = styled.footer`
     grid-area:foot;
     justify-self:left;
     align-self: center;
+    z-index:9;
 `
