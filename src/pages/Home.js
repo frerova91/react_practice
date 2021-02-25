@@ -86,7 +86,7 @@ export const Home = () => {
           <span>
             <strong>FREDDY ROJAS</strong>
           </span>{' '}
-          enginner in systems and Web Developer
+          System Engineer and Web Developer
         </aside>
 
         <section>
