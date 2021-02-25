@@ -32,10 +32,10 @@ export const NavLinks = () => {
   })
 
   return (
-    <Links>
-      <Link to={`${next}`}>&#x0003E;</Link>
-      <Link to='/menu'>&#x0002F;</Link>
-      <Link to={`${back}`}>&#x0003C;</Link>
+    <Links aria-label='navbar'>
+      <Link aria-label='next page' to={`${next}`}>&#x0003E;</Link>
+      <Link aria-label='menu' to='/menu'>&#x0002F;</Link>
+      <Link aria-label='previus page' to={`${back}`}>&#x0003C;</Link>
     </Links>
   )
 }

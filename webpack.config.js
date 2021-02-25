@@ -33,14 +33,16 @@ const commonPlugins = [
     ios: true,
     icons: [
       {
-        src: Path.resolve('src/assets/icons/pwaiconfr.png'),
+        src: Path.resolve('src/assets/icons/pwaiconfr2.png'),
         sizes: [120, 152, 167, 180, 1024],
         destination: Path.join('icons', 'ios'),
+        purpose: 'any maskable',
         ios: true
       },
       {
-        src: Path.resolve('src/assets/icons/pwaiconfr.png'),
+        src: Path.resolve('src/assets/icons/pwaiconfr2.png'),
         sizes: [96, 128, 192, 256, 384, 512],
+        purpose: 'any maskable',
         destination: Path.join('icons', 'android')
       }
     ]

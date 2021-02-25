@@ -3,7 +3,7 @@ import { Link } from './styles'
 
 function SvgX (props) {
   return (
-    <Link to='/'>
+    <Link aria-label='home' to='/'>
       <svg width='2em' height='2em' viewBox='0 0 28.284 28.284' {...props}>
         <defs>
           <style>

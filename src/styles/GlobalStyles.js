@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'myFont';
         src: url('${font1}') format('ttf'), url('${font2}') format('ttf'), url('${font3}') format('ttf');
         font-style: normal;
-        font-display: optional;
+        font-display: block;
     }
 
     html,body {

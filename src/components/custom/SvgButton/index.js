@@ -3,7 +3,7 @@ import { Link } from './styles.js'
 
 export function SvgComponent (props) {
   return (
-    <Link to='/menu'>
+    <Link aria-label='menu' to='/menu'>
       <svg width='2em' height='2em' viewBox='0 0 52.284 52.505' {...props}>
         <defs>
           <style>

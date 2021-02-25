@@ -33,10 +33,10 @@ export const NavLinkMobile = () => {
   })
 
   return (
-    <Links>
-      <Link to={`${back}`}>&#x0003C;</Link>
+    <Links arial-lable='navbar'>
+      <Link arial-lable='next page' to={`${back}`}>&#x0003C;</Link>
       <Menu />
-      <Link to={`${next}`}>&#x0003E;</Link>
+      <Link arial-lable='previus page' to={`${next}`}>&#x0003E;</Link>
     </Links>
   )
 }

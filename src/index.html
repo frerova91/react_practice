@@ -4,7 +4,9 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Web developer Profesional Porfolio"/>
-    <!-- <link rel="preload" href="workbox-02c0283b.js" as="script" crossorigin> -->
+    <link rel="preload" href="/assets/fonts/Roboto-Thin" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/assets/fonts/Roboto-Light" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/assets/fonts/Roboto-Medium" as="font" type="font/ttf" crossorigin>
     <link rel="icon" href="data:,"/>
     <title>Portfolio_FR</title>
 </head>
@@ -15,12 +17,12 @@
         window.addEventListener("load", function() {
           navigator.serviceWorker
             .register("/service-worker.js")
-            .then(registration => {
-              //console.warn("SW registrado");
-            })
-            .catch(registrationError => {
-              //console.warn("SW error", registrationError);
-            });
+            // .then(registration => {
+            //   //console.warn("SW registrado");
+            // })
+            // .catch(registrationError => {
+            //   //console.warn("SW error", registrationError);
+            // });
         });
       }
     </script>

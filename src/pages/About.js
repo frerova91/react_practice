@@ -6,6 +6,7 @@ import { NavLinkMobile } from '../components/custom/NavbarM/NavLinkMobile'
 import { useWindowResize } from '../components/hooks/useWindowResize'
 import SvgLogo from '../components/custom/SvgLogo/index'
 import img from '../assets/background/background-rain.webp'
+import ipdf from '../assets/CV/cv.pdf'
 
 export const About = () => {
   // document.body.style.background = ` #151515 url(${img}) no-repeat fixed center / cover`
@@ -38,15 +39,15 @@ export const About = () => {
 
           <div>
             <h3>Networks</h3>
-            <a href='https://github.com/frerova91'>GitHub</a>
-            <a href='https://twitter.com/Frerova'>Twitter</a>
-            <a href='https://www.linkedin.com/in/freddyJoseRojasValera'>LinkedIn</a>
+            <a aria-lable='github' href='https://github.com/frerova91'>GitHub</a>
+            <a aria-lable='twitter' href='https://twitter.com/Frerova'>Twitter</a>
+            <a aria-lable='linkedin' href='https://www.linkedin.com/in/freddyJoseRojasValera'>LinkedIn</a>
           </div>
 
           <div>
             <h3>Address</h3>
             <a href='mailto:frerova91@tutanota.com'>Email</a>
-            <a>CV - PDF</a>
+            <a aria-lable='cv' href={`${ipdf}`}>CV-PDF</a>
           </div>
 
           <SvgLogo />

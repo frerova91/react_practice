@@ -11,13 +11,6 @@ import imgD from '../assets/menu/default.webp'
 import imgS from '../assets/menu/stroke.webp'
 import imgR from '../assets/menu/rain.webp'
 
-// import { ThemeProvider } from 'styled-components'
-
-// const theme = { //this is for themeProvider
-//   bgApp: `#151515 url(${img}) no-repeat fixed center / cover`,
-//   bgBlend: 'normal'
-// }
-
 const myBackground = `#151515 url(${img}) no-repeat fixed center / cover`
 const myBlendMode = 'normal'
 
