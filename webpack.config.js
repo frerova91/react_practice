@@ -1,3 +1,4 @@
+// const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-preload')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const WebpackPwaManifestPluing = require('webpack-pwa-manifest')
 const CompressionPlugin = require('compression-webpack-plugin')
@@ -23,6 +24,14 @@ const commonPlugins = [
       minifyJS: true
     }
   }),
+  // new HtmlWebpackInjectPreload({
+  //   files: [
+  //     {
+  //       match: /.*\.ttf$/,
+  //       attributes: { as: 'font', type: 'font/ttf', crossorigin: true }
+  //     }
+  //   ]
+  // }),
   new WebpackPwaManifestPluing({
     name: 'Portfolio - Web Developer',
     shortname: 'Portfolio_FR',
@@ -63,7 +72,7 @@ const commonPlugins = [
         }
       },
       {
-        urlPattern: new RegExp(/\.(?:png|jpg|jpeg|svg|webp)$/),
+        urlPattern: new RegExp(/\.(?:png|jpg|jpeg|svg|webp|ttf)$/),
         handler: 'CacheFirst',
         options: {
           cacheName: 'images',
