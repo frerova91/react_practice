@@ -46,7 +46,7 @@ export const Head = styled.header`
     ${BreakPoints.desktop}{
 
         justify-content:space-between;
-        font-size:1em;
+        font-size: 1em;
         grid-column: 1/3;
         grid-row: 1/2;
         align-content: center;

@@ -75,17 +75,18 @@ export const Main = styled.main`
         word-spacing: 1px;
         color: #A7A7A7;
         font-size: 2.85vmax;
+        font-variation-settings:'wght'200;
         font-weight: 300;
-        padding-bottom: 30%;
+        padding-bottom: 50%;
         padding-right: 7%;
         
 
         & > h3 {
-            padding-bottom: 5%;
+            padding-bottom: 2%;
         }
 
-        & > p { 
-            padding-bottom: 2%;
+        & > p {
+            padding-bottom: 5%;
         }
     }
 
@@ -96,7 +97,7 @@ export const Main = styled.main`
         width: 100%;
         display:grid;
         align-content:center;
-        padding-bottom: 15%;   
+        padding-bottom: 30%;   
         padding-right: 15%;
 
             & > p {
@@ -126,7 +127,8 @@ export const Main = styled.main`
             justify-content: center;
             word-spacing: 2px;
             word-wrap: break-word;
-            font-size: 1.75vmax;
+            font-size: 1.35vmax;
+            font-variation-settings:'wght'200;
             grid-column: 2/3;
             grid-row: 1/2;
             padding: 0;
@@ -142,7 +144,7 @@ export const Main = styled.main`
             
                & > p{
                     font-size: 2.75vmax;
-                    justify-content: center; 
+                    justify-content: center;
                }
     
         }
@@ -171,7 +173,7 @@ export const Foot = styled.footer`
         position: relative;
 
         & h1{
-            top:-80%;
+            top:-200%;
             left:15%;
             z-index: 1;
         }

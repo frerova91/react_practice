@@ -89,12 +89,13 @@ export const Main = styled.main`
         padding-right: 8%; 
 
         & > h3 {
+            font-variation-settings:'wght'300;
             font-weight: 300;
             padding-bottom: 5%;
         }
 
         & > p {
-
+            font-variation-settings:'wght'200;
             font-weight: 300;
         }
     }
@@ -147,6 +148,7 @@ export const Main = styled.main`
                 width: 85%;
                 justify-self: center;
                 font-weight: 100;
+                font-variation-settings:'wght'100;
             }
         }
 
@@ -179,6 +181,7 @@ export const Main = styled.main`
                 display: flex;
                 flex-direction: column;
                 font-weight: 300;
+                font-variation-settings:'wght'200;
                 color:#A7A7A7;
 
                 &  h3 { 
@@ -201,6 +204,7 @@ export const Main = styled.main`
                 width: 15vw;
                 display: flex;
                 flex-direction: column;
+                font-variation-settings:'wght'200;
                 font-weight: 300;
                 color:#A7A7A7;
                 text-decoration:none;

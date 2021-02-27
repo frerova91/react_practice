@@ -1,20 +1,17 @@
 import { createGlobalStyle } from 'styled-components'
 
-/* import woff1 from './../assets/fonts/variable/Mplus1p-Thin.woff2'
-import woff2 from './../assets/fonts/variable/Mplus1p-Light.woff2'
-import woff3 from './../assets/fonts/variable/Mplus1p-Medium.woff2' */
-
-import font1 from './../assets/fonts/Roboto-Thin.ttf'
-import font2 from './../assets/fonts/Roboto-Light.ttf'
-import font3 from './../assets/fonts/Roboto-Medium.ttf'
+import Mplus from '../assets/fonts/Mplus/Mplus1pGX.ttf'
+// import robotoSlab from '../assets/fonts/robotoSlab/RobotoSlab-VariableFont_wght.ttf'
 
 export const GlobalStyles = createGlobalStyle`
 
     @font-face{
         font-family: 'myFont';
-        src: url('${font1}') format('ttf'), url('${font2}') format('ttf'), url('${font3}') format('ttf');
+        src: url('${Mplus}' ) format('truetype');
         font-style: normal;
         font-display: block;
+        font-weight: 100 200 300 400 500 600 700 800 900 1000;
+        
     }
 
     html,body {

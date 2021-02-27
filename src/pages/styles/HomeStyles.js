@@ -93,6 +93,7 @@ export const Main = styled.main`
         color: #A7A7A7;
         font-size: 1.25rem;
         font-weight: 200;
+        font-variation-settings:'wght'200;
         word-spacing: 1px;
         word-wrap: break-word;
         /*padding-top:10%;*/
@@ -150,7 +151,9 @@ export const Main = styled.main`
 
             color: $font-color-aside;
             font-size: 1.75vmax;
-            font-weight: 100;
+            /*font-weight: 100;
+            /*if you are using varible fonts use this*/
+            font-variation-settings:'wght'100;
         }
 
         & > section{

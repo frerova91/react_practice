@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const workboxPlugin = require('workbox-webpack-plugin')
 const Webpack = require('webpack')
 const Path = require('path')
+const zlib = require('zlib')
 
 // - - - - PLUGINS CONFIGURATIONS - - - -
 
@@ -95,7 +96,8 @@ const productionPlugins = [
     test: /\.(?:js|css|html|svg|png|webp)$/,
     compressionOptions: {
       // zlib’s level option matches Brotli’s BROTLI_PARAM_QUALITY option.
-      level: 11
+      // level: 11,
+      params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 11 }
     },
     threshold: 10240,
     minRatio: 0.8,
@@ -133,7 +135,25 @@ module.exports = (env, { mode }) => ({
   optimization: {
     splitChunks: {
       chunks: 'all',
-      name: 'chunks'
+      minSize: 20000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        defaultVendors: {
+          // [\\/]node_modules
+          test: /[\\/](react|react-dom|react-icons|styled-components)[\\/]/,
+          priority: -10,
+          reuseExistingChunk: true
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
     }
   },
   plugins: [

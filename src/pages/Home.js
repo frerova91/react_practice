@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from 'react'
 // import { NavButton } from '../components/custom/NavButton/index.js'
 import { Head, Main, Foot, Layout } from './styles/HomeStyles.js'
 import { NavLinks } from '../components/custom/NavLinks/NavLinks'
-// import { Layout } from '../components/layout/Layout.js'
 import { SvgComponent as Svg } from '../components/custom/SvgButton/index.js'
 import { NavLinkMobile } from '../components/custom/NavbarM/NavLinkMobile'
 
@@ -17,23 +16,14 @@ const myBlendMode = 'normal'
 export const Home = () => {
   // utilizar themeprovider seria la forma correcta en react pero creo first content mininfull paint mas largo en la aplicacion, de igualforma si usamos getElementById().
 
-  // document.body.style.background = `#151515 url(${img}) no-repeat fixed center / cover`
-  // document.body.style.backgroundBlendMode = 'normal'
-
   const ref1 = useRef(null)
   const ref2 = useRef(null)
   const ref3 = useRef(null)
   const ref4 = useRef(null)
 
-  // const [image, setImage] = useState({ image: false })
-
   const handleImage = (ref) => {
-    // console.log(ref4.current.src)
     if (ref === ref1) {
-      // ({ image: true })
-      // console.log(image)
       ref4.current.src = `${imgD}`
-      // document.querySelector('img').src = `${imgS}`
     }
     if (ref === ref2) {
       ref4.current.src = `${imgR}`
@@ -69,7 +59,6 @@ export const Home = () => {
   }, [])
 
   return (
-    // <ThemeProvider theme={theme}>
     <Layout style={{ background: `${myBackground}`, backgroundBlendMode: `${myBlendMode}` }}>
 
       <Head>
@@ -93,11 +82,6 @@ export const Home = () => {
           <h1>01</h1>
 
           <div>
-            {/*
-            <h1 onMouseOver={() => { document.querySelector('img').src = `${imgD}` }}>CODE</h1>
-            <h1 onMouseOver={() => { document.querySelector('img').src = `${imgR}` }}>DESIGN</h1>
-            <h1 onMouseOver={() => { document.querySelector('img').src = `${imgS}` }}>DEVELOP</h1>
-            */}
             <h1 ref={ref1} onMouseOver={() => handleImage(ref1)}>CODE</h1>
             <h1 ref={ref2} onMouseOver={() => handleImage(ref2)}>DESIGN</h1>
             <h1 ref={ref3} onMouseOver={() => handleImage(ref3)}>DEVELOP</h1>
@@ -105,7 +89,6 @@ export const Home = () => {
 
           <img
             ref={ref4}
-            // id='img'
             src={imgD}
             alt='images'
             loading='lazy'
@@ -118,7 +101,6 @@ export const Home = () => {
       </Foot>
 
     </Layout>
-    // </ThemeProvider>
   )
 }
 export { Home as default } from './Home'
