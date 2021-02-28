@@ -46,8 +46,8 @@ const commonPlugins = [
         src: Path.resolve('src/assets/icons/pwaiconfr2.png'),
         sizes: [120, 152, 167, 180, 1024],
         destination: Path.join('icons', 'ios'),
-        purpose: 'any maskable',
-        ios: true
+        purpose: 'any maskable'
+        // ios: true
       },
       {
         src: Path.resolve('src/assets/icons/pwaiconfr2.png'),
@@ -142,9 +142,9 @@ module.exports = (env, { mode }) => ({
       maxInitialRequests: 30,
       enforceSizeThreshold: 50000,
       cacheGroups: {
-        defaultVendors: {
-          // [\\/]node_modules
-          test: /[\\/](react|react-dom|react-icons|styled-components)[\\/]/,
+        Vendors: {
+          // test: /[\\/]node_modules[\\/](react|react-dom|react-icons|styled-components)[\\/]/,
+          test: /[\\/]node_modules[\\/]/,
           priority: -10,
           reuseExistingChunk: true
         },

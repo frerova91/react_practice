@@ -1,11 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react'
-// import { NavButton } from '../components/custom/NavButton/index.js'
 import { Head, Main, Foot, Layout } from './styles/HomeStyles.js'
 import { NavLinks } from '../components/custom/NavLinks/NavLinks'
 import { SvgComponent as Svg } from '../components/custom/SvgButton/index.js'
 import { NavLinkMobile } from '../components/custom/NavbarM/NavLinkMobile'
 
-import img from '../assets/background/background-default.webp'
+import img from '../assets/background/background-Home.webp'
 import imgD from '../assets/menu/default.webp'
 import imgS from '../assets/menu/stroke.webp'
 import imgR from '../assets/menu/rain.webp'
@@ -56,7 +55,7 @@ export const Home = () => {
     return () => {
       window.removeEventListener('resize', handleWindowResize)
     }
-  }, [])
+  }, [debounce])
 
   return (
     <Layout style={{ background: `${myBackground}`, backgroundBlendMode: `${myBlendMode}` }}>
@@ -87,12 +86,8 @@ export const Home = () => {
             <h1 ref={ref3} onMouseOver={() => handleImage(ref3)}>DEVELOP</h1>
           </div>
 
-          <img
-            ref={ref4}
-            src={imgD}
-            alt='images'
-            loading='lazy'
-          />
+          <img ref={ref4} src={imgD} alt='images' />
+
         </section>
       </Main>
 

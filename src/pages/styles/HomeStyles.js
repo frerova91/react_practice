@@ -10,10 +10,7 @@ export const Layout = styled.div`
     grid-template-columns: minmax(auto,1fr);
     grid-template-rows: minmax(auto, 15%) minmax(auto,70%) minmax(auto,15%);
     padding: 30px 40px 30px 40px;
-    /*
-    background: ${props => props.theme.bgApp};
-    background-blend-mode: ${props => props.theme.bgBlend};
-    */
+
 
     ${BreakPoints.desktop}{
         grid-template-columns: minmax(auto,15%) minmax(auto,70%) minmax(auto,15%);
