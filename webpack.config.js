@@ -5,6 +5,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const workboxPlugin = require('workbox-webpack-plugin')
+// const TerserPlugin = require('terser-webpack-plugin') //this is old webpack
 const Webpack = require('webpack')
 const Path = require('path')
 const zlib = require('zlib')
@@ -58,7 +59,7 @@ const commonPlugins = [
     ]
   }),
   new workboxPlugin.GenerateSW({
-    //  exclude: [/\.(?:png|jpg|jpeg|svg|webp)$/],
+    // exclude: [/\.(?:png|jpg|jpeg|svg|webp)$/],
     // this avoid precaching all in the website in workbox on load the first page
     runtimeCaching: [
     // And this specify the Routes and files for caching on load
@@ -93,7 +94,7 @@ const productionPlugins = [
   new CompressionPlugin({
     filename: '[path].[base].br',
     algorithm: 'brotliCompress',
-    test: /\.(?:js|css|html|svg|png|webp)$/,
+    test: /\.(?:js|css|html|svg|png|webp|pdf)$/,
     compressionOptions: {
       // zlib’s level option matches Brotli’s BROTLI_PARAM_QUALITY option.
       // level: 11,
@@ -116,12 +117,14 @@ const developmentPlugins = [
 // - - - - MAIN WEBPACK CONFIGURATIONS - - - -
 
 module.exports = (env, { mode }) => ({
-  devtool: (mode === 'deveplopment' ? 'source-map' : 'hidden-source-map'),
+  // devtool: (mode === 'deveplopment' ? 'source-map' : 'hidden-source-map'),
+  devtool: (mode === 'deveplopment' ? 'source-map' : 'nosources-source-map'),
   entry: {
     home: Path.resolve(__dirname, './src/index.js')
   },
   output: {
-    filename: 'main.[Hash].js',
+    // filename: 'app.[Hash].js',
+    filename: (mode === 'development' ? 'dev.[Hash].js' : 'app.[Hash].js'),
     publicPath: '/'
   },
   devServer: {
@@ -133,8 +136,11 @@ module.exports = (env, { mode }) => ({
     port: 8080
   },
   optimization: {
+    // minimize: true,
+    // minimizer: (mode === 'development' ? [] : [new TerserPlugin()]),
     splitChunks: {
-      chunks: 'all',
+      chunks: 'async',
+      name: 'commons',
       minSize: 20000,
       maxSize: 0,
       minChunks: 1,
@@ -143,8 +149,10 @@ module.exports = (env, { mode }) => ({
       enforceSizeThreshold: 50000,
       cacheGroups: {
         Vendors: {
-          // test: /[\\/]node_modules[\\/](react|react-dom|react-icons|styled-components)[\\/]/,
-          test: /[\\/]node_modules[\\/]/,
+          // test: /[\\/]node_modules[\\/]/,
+          test: /[\\/]node_modules[\\/](react|react-dom|react-icons|styled-components)[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
           priority: -10,
           reuseExistingChunk: true
         },
@@ -175,11 +183,11 @@ module.exports = (env, { mode }) => ({
       }
     },
     {
-      test: /\.(?:jpg|pdf|png|gif|woff|woff2|eot|ttf|svg|mp4|webm|webp)$/,
+      test: /\.(?:jpg|pdf|png|gif|woff|woff2|eot|ttf|mp4|webm|webp)$/,
       use: {
         loader: 'url-loader',
         options: {
-          limit: 9000,
+          limit: 8192,
           encoding: true,
           name: '[hash].[ext]', // or [name].[hash].[ext]
           outputPath: 'assets'

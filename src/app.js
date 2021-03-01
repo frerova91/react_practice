@@ -1,14 +1,14 @@
 import React, { Suspense, lazy } from 'react'
 import { Router } from '@reach/router'
 import { GlobalStyles } from './styles/GlobalStyles.js'
-import Home from './pages/Home'
+// import Home from './pages/Home'
 
 // Use loadable Components if you need SSR or Library splitting
 const Expertice = lazy(() => import('./pages/Expertice'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 const Skilled = lazy(() => import('./pages/Skilled'))
 const About = lazy(() => import('./pages/About'))
-// const Home = lazy(() => import('./pages/Home'))
+const Home = lazy(() => import('./pages/Home'))
 const Menu = lazy(() => import('./pages/Menu'))
 
 export const App = () => {
