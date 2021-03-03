@@ -29,7 +29,7 @@ export const About = () => {
 
       <Main>
         <section>
-          <h3>About Me -</h3>
+          <h1>About Me -</h1>
 
           <p>Hello I'm Freddy Rojas a system engineer with knowledge in front-end and  back-end technologies. Always learning and developing new ways to improve web desing. Excited about working in groups to improve my professional skills and share what I know.</p>
         </section>
@@ -38,16 +38,16 @@ export const About = () => {
           <h1>02</h1>
 
           <div>
-            <h3>Networks</h3>
-            <a aria-lable='github' href='https://github.com/frerova91'>GitHub</a>
-            <a aria-lable='twitter' href='https://twitter.com/Frerova'>Twitter</a>
-            <a aria-lable='linkedin' href='https://www.linkedin.com/in/freddyJoseRojasValera'>LinkedIn</a>
+            <h2>Networks</h2>
+            <a aria-label='github' href='https://github.com/frerova91'>GitHub</a>
+            <a aria-label='twitter' href='https://twitter.com/Frerova'>Twitter</a>
+            <a aria-label='linkedin' href='https://www.linkedin.com/in/freddyJoseRojasValera'>LinkedIn</a>
           </div>
 
           <div>
-            <h3>Address</h3>
+            <h2>Address</h2>
             <a href='mailto:frerova91@tutanota.com'>Email</a>
-            <a aria-lable='cv' href={`${ipdf}`}>CV-PDF</a>
+            <a aria-label='cv' href={`${ipdf}`}>CV-PDF</a>
           </div>
 
           <SvgLogo />

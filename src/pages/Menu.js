@@ -110,17 +110,17 @@ export const Menu = () => {
 
         <div>
           <h3>Networks</h3>
-          <a aria-lable='github' href='https://github.com/frerova91'>GitHub</a>
-          <a aria-lable='twitter' href='https://twitter.com/Frerova'>Twitter</a>
-          <a aria-lable='linkedin' href='https://www.linkedin.com/in/freddyJoseRojasValera'>LinkedIn</a>
+          <a aria-label='github' href='https://github.com/frerova91'>GitHub</a>
+          <a aria-label='twitter' href='https://twitter.com/Frerova'>Twitter</a>
+          <a aria-label='linkedin' href='https://www.linkedin.com/in/freddyJoseRojasValera'>LinkedIn</a>
         </div>
 
         <div>
           <h3>Address</h3>
           {/* <a href='mailto:' data-website='moc.atonatut' data-user='@19avoref' /> */}
-          <a aria-lable='mail' href='mailto:frerova91@tutanota.com'>Email</a>
+          <a aria-label='mail' href='mailto:frerova91@tutanota.com'>Email</a>
           {/* <Link to={`${pdf}`}>CV - PDF</Link> */}
-          <a aria-lable='cv' href={`${ipdf}`}>CV-PDF</a>
+          <a aria-label='cv' href={`${ipdf}`}>CV-PDF</a>
         </div>
 
         <SvgLogo />
